@@ -2,11 +2,4 @@
     {{title}}
 </h1>
 
-<md-list>
-    <md-list-item *ngFor="let item of sliderList" >
-        {{item.label}}
-        <md-slider (change)="onChange($event, item.id)" [min]="item.min" [max]="item.max" [step]="item.step" [value]="item.defaultValue" [thumbLabel]="true"></md-slider>
-    </md-list-item>
-</md-list>
-
-<p *ngIf="total > 0">{{total}}</p>
+<workspace></workspace>

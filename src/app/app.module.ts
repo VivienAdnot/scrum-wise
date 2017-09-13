@@ -7,10 +7,14 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 import {MdListModule, MdSliderModule} from '@angular/material';
+import { WorkspaceComponent } from './workspace/workspace.component';
+
+import { WorkspaceService } from './workspace/workspace.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WorkspaceComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,7 @@ import {MdListModule, MdSliderModule} from '@angular/material';
     MdListModule,
     MdSliderModule
   ],
-  providers: [],
+  providers: [WorkspaceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

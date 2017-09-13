@@ -1,0 +1,12 @@
+<md-list>
+    <md-list-item *ngFor="let phase of phases" >
+        <div mdLine>{{phase.label}}</div>
+        <div mdLine>
+            <span>{{phase.min}}</span>
+            <md-slider (change)="onChange($event, phase.id)" [min]="phase.min" [max]="phase.max" [step]="phase.step" [value]="phase.defaultValue"></md-slider>
+            <span>{{phase.max}}</span>
+        </div>
+    </md-list-item>
+</md-list>
+
+<h1>{{total}}</h1>

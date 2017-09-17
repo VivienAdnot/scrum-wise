@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { PhaseModel } from '../models/phase.model';
-import { phasesMock } from './phases.mock';
+import { PhaseModel } from './models/phase.model';
+import { phasesMock } from './mocks/phases.mock';
 
 @Injectable()
-export class WorkspaceService {
+export class ScrumPokerService {
   pokerValues = [0, 1, 2, 3, 5, 8, 13, 20, 40, 100];
 
   constructor() { }
@@ -20,5 +20,9 @@ export class WorkspaceService {
       }
 
       throw `score must be contained between 0 and ${Math.max(...this.pokerValues)}`;
+  }
+
+  getPokerValues() {
+      return this.pokerValues;
   }
 }

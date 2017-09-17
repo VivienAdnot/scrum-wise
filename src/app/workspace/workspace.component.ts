@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
-import { WorkspaceService } from './workspace.service';
+import { ScrumPokerService } from '../scrum-poker.service';
 import { PhaseModel } from '../models/phase.model';
 import { DialogScoreComponent } from '../dialog-score/dialog-score.component';
 
@@ -11,20 +11,20 @@ import { DialogScoreComponent } from '../dialog-score/dialog-score.component';
 })
 export class WorkspaceComponent implements OnInit {
     phases: PhaseModel[];
-    
+
     sliderValues: number[];
     sliderInputs: number[];
 
     sliderSum: number;
     pokerScore: number;
 
-    constructor(public dialog: MdDialog, private workspaceService: WorkspaceService) {
+    constructor(public dialog: MdDialog, private scrumPokerService: ScrumPokerService) {
         this.sliderValues = [];
         this.sliderInputs = [];
     }
 
     async ngOnInit() {
-        this.phases = await this.workspaceService.getPhases();
+        this.phases = await this.scrumPokerService.getPhases();
 
         this.sliderValues = this.phases.map((phase) => phase.defaultValue);
         this.sliderInputs = this.sliderValues;
@@ -42,7 +42,7 @@ export class WorkspaceComponent implements OnInit {
 
     updateScore() {
         this.sliderSum = this.sliderValues.reduce((a, b) => a + b, 0);
-        this.pokerScore = this.workspaceService.getPokerScore(this.sliderSum);
+        this.pokerScore = this.scrumPokerService.getPokerScore(this.sliderSum);
     }
 
     openDialog(score: number): void {

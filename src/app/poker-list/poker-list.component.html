@@ -1,0 +1,7 @@
+<md-grid-list cols="4">
+    <md-grid-tile *ngFor="let pokerValue of pokerValues">
+        <button md-button (click)="openDialog(pokerValue)">{{pokerValue}}</button>
+    </md-grid-tile>
+</md-grid-list>
+
+<a class="md-button" routerLink="/workspace">Workspace</a>

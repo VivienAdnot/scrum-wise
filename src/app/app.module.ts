@@ -2,21 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { ROUTES } from './app.routes';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdListModule, MdGridListModule, MdSliderModule, MdDialogModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-
-import { MdListModule, MdSliderModule, MdDialogModule } from '@angular/material';
 import { WorkspaceComponent } from './workspace/workspace.component';
-
-import { WorkspaceService } from './workspace/workspace.service';
 import { DialogScoreComponent } from './dialog-score/dialog-score.component';
+import { PokerListComponent } from './poker-list/poker-list.component';
+
+import { ScrumPokerService } from './scrum-poker.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     WorkspaceComponent,
-    DialogScoreComponent
+    DialogScoreComponent,
+    PokerListComponent
   ],
   entryComponents: [
     DialogScoreComponent
@@ -25,12 +29,14 @@ import { DialogScoreComponent } from './dialog-score/dialog-score.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule.forRoot(ROUTES),
     BrowserAnimationsModule,
     MdListModule,
+    MdGridListModule,
     MdSliderModule,
     MdDialogModule
   ],
-  providers: [WorkspaceService],
+  providers: [ScrumPokerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

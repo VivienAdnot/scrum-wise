@@ -41,8 +41,10 @@ export class WorkspaceComponent implements OnInit {
         this.total = this.sliderValues.reduce((a, b) => a + b, 0);
     }
 
-    openDialog(): void {
-        let dialogRef = this.dialog.open(DialogScoreComponent);
+    openDialog(score): void {
+        let dialogRef = this.dialog.open(DialogScoreComponent, {
+            data: { score: score }
+        });
 
         dialogRef.afterClosed().subscribe(result => {
             console.log('the dialog was closed');

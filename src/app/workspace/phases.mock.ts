@@ -2,7 +2,7 @@ import { PhaseModel } from '../models/phase.model';
 
 export const phasesMock: PhaseModel[] = [
   {
-      label: "analyse",
+      label: "Analyse",
       id: 0,
       min: 0,
       max: 3,
@@ -10,7 +10,7 @@ export const phasesMock: PhaseModel[] = [
       defaultValue: 0
   },
   {
-      label: "inconnu connu",
+      label: "Inconnu connu",
       id: 1,
       min: 0,
       max: 5,
@@ -18,7 +18,7 @@ export const phasesMock: PhaseModel[] = [
       defaultValue: 0
   },
   {
-      label: "draft quick & dirty",
+      label: "Draft quick & dirty",
       id: 2,
       min: 1,
       max: 10,
@@ -26,7 +26,7 @@ export const phasesMock: PhaseModel[] = [
       defaultValue: 0
   },
   {
-      label: "tests unitaires",
+      label: "Tests unitaires",
       id: 3,
       min: 0,
       max: 5,
@@ -34,7 +34,7 @@ export const phasesMock: PhaseModel[] = [
       defaultValue: 0
   },
   {
-      label: "refactoring",
+      label: "Refactoring du draft",
       id: 4,
       min: 0,
       max: 10,
@@ -42,7 +42,7 @@ export const phasesMock: PhaseModel[] = [
       defaultValue: 0
   },
   {
-      label: "cleaning - pull request",
+      label: "Cleaning & pull request",
       id: 5,
       min: 0,
       max: 2,
@@ -50,7 +50,7 @@ export const phasesMock: PhaseModel[] = [
       defaultValue: 0
   },
   {
-      label: "risque d'imprévu",
+      label: "Risque d'imprévu",
       id: 6,
       min: 0,
       max: 4,

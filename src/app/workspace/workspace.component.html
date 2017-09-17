@@ -1,8 +1,8 @@
 <md-list>
     <md-list-item *ngFor="let phase of phases" >
         <div mdLine>
-          <span class="phase-label">{{phase.label}}</span>
-          <strong class="phase-score">{{sliderInputs[phase.id]}}</strong>
+            <span class="phase-label">{{phase.label}}</span>
+            <strong class="phase-score">{{sliderInputs[phase.id]}}</strong>
         </div>
         <div mdLine>
             <small>{{phase.min}}</small>
@@ -20,4 +20,4 @@
 </md-list>
 
 <button md-button md-raised-button color="accent" (click)="openDialog(pokerScore)">Sum: {{sliderSum}}. Display score: {{pokerScore}}</button>
-<a md-button routerLink="/">Retour</a>
+<a md-button md-raised-button routerLink="/">Retour</a>

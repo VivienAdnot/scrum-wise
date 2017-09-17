@@ -1,10 +1,13 @@
 <md-list>
     <md-list-item *ngFor="let phase of phases" >
-        <div mdLine>{{phase.label}}</div>
         <div mdLine>
-            <span>{{phase.min}}</span>
-            <md-slider (change)="onChange($event, phase.id)" [min]="phase.min" [max]="phase.max" [step]="phase.step" [value]="phase.defaultValue"></md-slider>
-            <span>{{phase.max}}</span>
+          <span class="phase-label">{{phase.label}}</span>
+          <strong class="phase-score">{{sliderInputs[phase.id]}}</strong>
+        </div>
+        <div mdLine>
+            <small>{{phase.min}}</small>
+            <md-slider (change)="onChange($event, phase.id)" (input)="onInput($event, phase.id)" [min]="phase.min" [max]="phase.max" [step]="phase.step" [value]="phase.defaultValue"></md-slider>
+            <small>{{phase.max}}</small>
         </div>
     </md-list-item>
 </md-list>

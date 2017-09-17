@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { WorkspaceService } from './workspace.service';
 import { PhaseModel } from '../models/phase.model';
+import { DialogScoreComponent } from '../dialog-score/dialog-score.component';
 
 @Component({
   selector: 'workspace',
@@ -13,7 +15,7 @@ export class WorkspaceComponent implements OnInit {
     sliderValues: number[];
     sliderInputs: number[];
 
-    constructor(private workspaceService: WorkspaceService) {
+    constructor(public dialog: MdDialog, private workspaceService: WorkspaceService) {
         this.sliderValues = [];
         this.sliderInputs = [];
     }
@@ -37,6 +39,14 @@ export class WorkspaceComponent implements OnInit {
 
     computeTotal() {
         this.total = this.sliderValues.reduce((a, b) => a + b, 0);
+    }
+
+    openDialog(): void {
+        let dialogRef = this.dialog.open(DialogScoreComponent);
+
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('the dialog was closed');
+        })
     }
 
 }

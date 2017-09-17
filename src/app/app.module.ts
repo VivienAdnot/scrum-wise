@@ -6,15 +6,20 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
-import {MdListModule, MdSliderModule} from '@angular/material';
+import { MdListModule, MdSliderModule, MdDialogModule } from '@angular/material';
 import { WorkspaceComponent } from './workspace/workspace.component';
 
 import { WorkspaceService } from './workspace/workspace.service';
+import { DialogScoreComponent } from './dialog-score/dialog-score.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WorkspaceComponent
+    WorkspaceComponent,
+    DialogScoreComponent
+  ],
+  entryComponents: [
+    DialogScoreComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,8 @@ import { WorkspaceService } from './workspace/workspace.service';
     HttpModule,
     BrowserAnimationsModule,
     MdListModule,
-    MdSliderModule
+    MdSliderModule,
+    MdDialogModule
   ],
   providers: [WorkspaceService],
   bootstrap: [AppComponent]

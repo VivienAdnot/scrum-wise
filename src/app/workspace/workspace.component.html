@@ -6,10 +6,17 @@
         </div>
         <div mdLine>
             <small>{{phase.min}}</small>
-            <md-slider (change)="onChange($event, phase.id)" (input)="onInput($event, phase.id)" [min]="phase.min" [max]="phase.max" [step]="phase.step" [value]="phase.defaultValue"></md-slider>
+            <md-slider
+                (change)="onChange($event, phase.id)"
+                (input)="onInput($event, phase.id)"
+                [min]="phase.min"
+                [max]="phase.max"
+                [step]="phase.step"
+                [value]="phase.defaultValue">
+            </md-slider>
             <small>{{phase.max}}</small>
         </div>
     </md-list-item>
 </md-list>
 
-<button md-button (click)="openDialog(total)">Display card {{total}}</button>
+<button md-button (click)="openDialog(pokerScore)">Sum: {{sliderSum}}. Display score: {{pokerScore}}</button>

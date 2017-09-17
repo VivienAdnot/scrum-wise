@@ -10,10 +10,13 @@ import { DialogScoreComponent } from '../dialog-score/dialog-score.component';
   styleUrls: ['./workspace.component.css']
 })
 export class WorkspaceComponent implements OnInit {
-    total: number;
     phases: PhaseModel[];
+    
     sliderValues: number[];
     sliderInputs: number[];
+
+    sliderSum: number;
+    pokerScore: number;
 
     constructor(public dialog: MdDialog, private workspaceService: WorkspaceService) {
         this.sliderValues = [];
@@ -25,23 +28,24 @@ export class WorkspaceComponent implements OnInit {
 
         this.sliderValues = this.phases.map((phase) => phase.defaultValue);
         this.sliderInputs = this.sliderValues;
-        this.computeTotal();
+        this.updateScore();
     }
 
     onChange(event, sliderId) {
         this.sliderValues[sliderId] = event.value;
-        this.computeTotal();
+        this.updateScore();
     }
 
     onInput(event, sliderId) {
         this.sliderInputs[sliderId] = event.value;
     }
 
-    computeTotal() {
-        this.total = this.sliderValues.reduce((a, b) => a + b, 0);
+    updateScore() {
+        this.sliderSum = this.sliderValues.reduce((a, b) => a + b, 0);
+        this.pokerScore = this.workspaceService.getPokerScore(this.sliderSum);
     }
 
-    openDialog(score): void {
+    openDialog(score: number): void {
         let dialogRef = this.dialog.open(DialogScoreComponent, {
             data: { score: score }
         });

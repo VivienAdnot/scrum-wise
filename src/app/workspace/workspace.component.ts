@@ -1,5 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Router } from '@angular/router';
 import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
 import { DialogScoreComponent } from '../dialog-score/dialog-score.component';
 
@@ -21,7 +20,6 @@ export class WorkspaceComponent implements OnInit {
     pokerScore: number;
 
     constructor(
-        private router: Router,
         public dialog: MdDialog,
         private scrumPokerService: ScrumPokerService) {
         this.sliderValues = [];
@@ -54,9 +52,5 @@ export class WorkspaceComponent implements OnInit {
         let dialogRef = this.dialog.open(DialogScoreComponent, {
             data: { score: score }
         });
-
-        dialogRef.afterClosed().subscribe(result => {
-            this.router.navigate(['/']);
-        })
     }
 }

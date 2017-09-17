@@ -6,7 +6,7 @@ export const phasesMock: PhaseModel[] = [
       id: 0,
       min: 0,
       max: 3,
-      step: 1,
+      step: 0.5,
       defaultValue: 0
   },
   {
@@ -14,15 +14,15 @@ export const phasesMock: PhaseModel[] = [
       id: 1,
       min: 0,
       max: 5,
-      step: 1,
+      step: 0.5,
       defaultValue: 0
   },
   {
       label: "Draft quick & dirty",
       id: 2,
-      min: 1,
+      min: 0,
       max: 10,
-      step: 1,
+      step: 0.5,
       defaultValue: 0
   },
   {
@@ -30,7 +30,7 @@ export const phasesMock: PhaseModel[] = [
       id: 3,
       min: 0,
       max: 5,
-      step: 1,
+      step: 0.5,
       defaultValue: 0
   },
   {
@@ -38,7 +38,7 @@ export const phasesMock: PhaseModel[] = [
       id: 4,
       min: 0,
       max: 10,
-      step: 1,
+      step: 0.5,
       defaultValue: 0
   },
   {
@@ -46,15 +46,15 @@ export const phasesMock: PhaseModel[] = [
       id: 5,
       min: 0,
       max: 2,
-      step: 1,
+      step: 0.5,
       defaultValue: 0
   },
-  {
-      label: "Risque d'imprévu",
-      id: 6,
-      min: 0,
-      max: 4,
-      step: 1,
-      defaultValue: 0
-  },
+  // {
+  //     label: "Risque d'imprévu",
+  //     id: 6,
+  //     min: 0,
+  //     max: 4,
+  //     step: 1,
+  //     defaultValue: 0
+  // },
 ]

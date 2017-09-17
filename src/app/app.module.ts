@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdListModule, MdGridListModule, MdSliderModule, MdDialogModule } from '@angular/material';
+import { MdToolbarModule, MdListModule, MdGridListModule, MdSliderModule, MdDialogModule, MdButtonModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
@@ -34,7 +34,9 @@ import { ScrumPokerService } from './scrum-poker.service';
     MdListModule,
     MdGridListModule,
     MdSliderModule,
-    MdDialogModule
+    MdDialogModule,
+    MdToolbarModule,
+    MdButtonModule
   ],
   providers: [ScrumPokerService],
   bootstrap: [AppComponent]

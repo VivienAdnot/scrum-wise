@@ -1,8 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { MdDialog, MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { DialogScoreComponent } from '../dialog-score/dialog-score.component';
+
 import { ScrumPokerService } from '../scrum-poker.service';
 import { PhaseModel } from '../models/phase.model';
-import { DialogScoreComponent } from '../dialog-score/dialog-score.component';
 
 @Component({
   selector: 'workspace',
@@ -18,7 +20,10 @@ export class WorkspaceComponent implements OnInit {
     sliderSum: number;
     pokerScore: number;
 
-    constructor(public dialog: MdDialog, private scrumPokerService: ScrumPokerService) {
+    constructor(
+        private router: Router,
+        public dialog: MdDialog,
+        private scrumPokerService: ScrumPokerService) {
         this.sliderValues = [];
         this.sliderInputs = [];
     }
@@ -51,8 +56,7 @@ export class WorkspaceComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-            console.log('the dialog was closed');
+            this.router.navigate(['/']);
         })
     }
-
 }
